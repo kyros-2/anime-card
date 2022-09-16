@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka', sans-serif;
+}
+
+body, .icon a, .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    background-color: #d2e3e6;
+    gap: 20px;
+    flex-wrap: wrap;
+    height: 100vh;
+    padding: 30px 0;
+}
+
+.all {
+    position: relative;
+    width: 300px;
+    height: 450px;
+    background: var(--background);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.all::before{
+    content: '';
+    background: linear-gradient(to top , rgba(0, 0, 0, 0.96) 30%,rgba(0, 0, 0, 0.788) 60%, rgba(0, 0, 0, 0.226) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: .5s;
+}
+
+.all:hover::before{
+    opacity: 1;
+}
+
+.all .star{
+    margin-left: 65%;
+    color: rgb(251, 255, 0);
+    text-shadow: 0 0 15px rgb(251, 255, 0);
+    transform: scale(1.05);
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateX(50%);
+}
+
+.all .info{
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateX(-50%);
+}
+
+.all:hover .info,.all:hover .star{
+    opacity: 1;
+    transform: translate(0%);
+}
+
+.all .info h1{
+    color: #d2e3e6;
+    font-size: 40px;
+}
+
+.all .info p{
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 0.8;
+}
+
+.all .info .icon{
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+.all .info .icon a{
+    text-decoration: none;
+    width: 60%;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 5px;
+    transition: 0.3s;
+}
+
+.all .info .icon a:hover{
+    color: rgba(0, 0, 0, 0.616);
+    background-color: rgb(255, 255, 255);
+}
+
+.all .info .icon a i{
+    font-size: 25px;
+}
+
+.all .info .icon .heart{
+    cursor: pointer;
+    padding-top: 4px;
+    color: transparent;
+    font-size: 23px;
+    -webkit-text-stroke: rgb(255, 255, 255) 1px;
+    transition: 0.3s;
+}
+.all .info .icon .heart:hover{
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 40px rgb(255, 255, 255);
+}
+
+
+.info .icon i.active{
+    color: rgb(255, 255, 255) !important;
+}
